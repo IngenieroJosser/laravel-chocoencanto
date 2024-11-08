@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'text';
+    src: url('../../fonts/Nunito-Light.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'titleForm';
+    src: url('../../fonts/Ichiji-Two.otf') format('truetype');
+}

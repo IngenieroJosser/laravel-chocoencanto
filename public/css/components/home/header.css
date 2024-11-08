@@ -1,0 +1,201 @@
+@import '../../settings/fonts.css';
+@import '../../settings/variables.css';
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.3em 2em;
+    background-color: var(--bg-hover);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin-bottom: 3em;
+}
+
+header a {
+    font-size: .8em;
+    margin-left: 1em;
+}
+
+header .menu-toggle .bar {
+    margin-left: -4.8em;
+}
+
+header nav,
+header .log-sign {
+    display: flex;
+    gap: 2em;
+}
+
+header .log-sign a,
+header nav a {
+    transition: all 0.3s ease;
+} 
+
+header .log-sign a:hover,
+header nav a:hover {
+    border-bottom: 2px solid var(--color-four);
+}
+
+header .log-sign span {
+    border-bottom: 2px solid rgba(5, 25, 35, .3);
+}
+
+header.scrolled {
+    background-color: var(--text-two);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    font-family: 'text';
+    color: var(--text);
+    text-decoration: none;
+}
+
+header h4 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'titleForm';
+    color: var(--text);
+}
+
+/* Estilos para el botón del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 101;
+    color: var(--text);
+}
+
+.menu-toggle .bar {
+    background-color: var(--text);
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Contenido del menú */
+.menu-content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.menu-content nav {
+    display: flex;
+    gap: 2em;
+}
+
+.menu-content nav a,
+.menu-content .log-sign a {
+    color: var(--text);
+}
+
+.menu-content .log-sign {
+    display: flex;
+    gap: 1em;
+}
+
+.log-sign span {
+    font-family: 'text';
+}
+
+.log-sign button {
+    background-color: transparent;
+    font-family: 'text';
+    border: none;
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+.log-sign button:hover {
+    border-bottom: 1px solid var(--color-four);
+}
+
+/* Menú móvil */
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+        padding: 1em;
+        justify-content: space-between;
+    }
+
+    /* Ocultar el menú horizontal y mostrar el hamburguesa */
+    .menu-content {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--bg-hover);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        align-items: center;
+        gap: 1em;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .menu-content.active {
+        display: flex;
+    }
+
+    .menu-content nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-content nav a {
+        padding: 1em;
+        border-bottom: 1px solid var(--text);
+        text-align: center;
+        color: black; /* Cambia el color del texto del menú en móviles a negro */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Estilos más específicos para móviles pequeños */
+@media (max-width: 480px) {
+    header {
+        width: 100%;
+        padding: 0.8em;
+    }
+
+    .menu-content nav {
+        background-color: var(--bg-hover);
+        border-radius: 10px;
+    }
+
+    .menu-content nav a,
+    .menu-content .log-sign a {
+        font-size: 1em;
+        padding: 0.8em;
+        color: var(--text); /* Cambia el color del texto del menú en móviles pequeños a negro */
+        font-weight: bold;
+    }
+
+    .menu-content .log-sign .btn1,
+    .menu-content .log-sign .btn2 {
+        font-size: 0.9em;
+        padding: 0.6em 1.2em;
+        margin-top: 1.3em;
+    }
+}

@@ -1,0 +1,128 @@
+.content-user {
+    display: flex;
+    gap: 5em;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en filas */
+    justify-content: center; /* Centra los elementos */
+}
+
+.testimony {
+    display: flex;
+    padding-bottom: 7.7em;
+    margin-top: 2em;
+    flex-wrap: wrap; /* Asegura que los elementos no se desborden en pantallas más pequeñas */
+    justify-content: center;
+}
+
+.testimony-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    margin-left: 5.7em;
+    background-color: #07190f;
+    border: 3px solid #baff29;
+    border-radius: 7px;
+    width: 300px; /* Ancho fijo para pantallas grandes */
+    text-align: center;
+}
+
+.testimony-box p {
+    font-family: 'text';
+    color: #ffffff;
+}
+
+.testimony-box a {
+    font-family: 'text';
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 0.5em 1em;
+}
+
+.testimony-box a:hover {
+    background-color: var(--color-four);
+    color: var(--text-two);
+    border-radius: 7px;
+    padding: 0.5em 1em;
+    border-bottom: 2px solid var(--color-five);
+    border-right: 2px solid var(--color-five);
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #07190f;
+    border-right: 1px solid #baff29;
+    border-left: 1px solid #baff29;
+    padding: 1em 4em;
+    padding-bottom: 3em;
+    border-radius: 7px;
+}
+
+.user img {
+    width: 7.3em;
+    height: 7.3em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user .name {
+    color: #ffffff;
+    font-size: 12px;
+    margin-left: 1em;
+    font-family: 'text';
+}
+
+.testimony-box span {
+    position: relative;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* Media Queries para Responsividad */
+
+/* Para tablets */
+@media (max-width: 768px) {
+    .content-user {
+        gap: 1em; /* Reduce el espacio entre los elementos */
+    }
+
+    .testimony-box {
+        width: 250px; /* Reduce el ancho de los elementos */
+    }
+
+    .user {
+        padding: 1em 2em; /* Reduce el padding */
+    }
+
+    .user .name {
+        font-size: 11px; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+    .content-user {
+        gap: 1em; /* Reduce aún más el espacio */
+    }
+
+    .testimony-box {
+        width: 100%; /* El ancho ocupa todo el espacio disponible */
+        margin-left: 0; /* Elimina el margen */
+    }
+
+    .user {
+        padding: 1em; /* Ajusta el padding para móviles */
+    }
+
+    .user .name {
+        font-size: 10px; /* Ajusta el tamaño de la fuente para móviles */
+    }
+
+    .word-user {
+        font-size: 11px; /* Ajusta el tamaño de la fuente del texto */
+    }
+}

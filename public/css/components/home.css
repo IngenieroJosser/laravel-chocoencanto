@@ -1,0 +1,9 @@
+@import '../settings/variables.css';
+@import '../settings/fonts.css';
+
+@import '../components/home/header.css';
+@import '../components/home/presentation.css';
+@import '../components/home/some-places.css';
+@import '../components/home/services.css';
+@import '../components/home/user-say.css';
+@import '../components/home/footer.css';

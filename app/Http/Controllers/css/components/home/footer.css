@@ -1,0 +1,130 @@
+@import '../../settings/variables.css';
+
+footer {
+    display: flex;
+    gap: 2em;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1.2em 3.3em;
+    border-bottom: 3px solid #15191E;
+    border-top: 3px solid rgba(21, 25, 30, 0.4);
+    margin-top: 5.7em;
+}
+
+footer span {
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #07190f;
+    font-family: 'text';
+}
+
+.social-media {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.social-media img {
+    transition: all ease-in 0.2s;
+}
+
+.social-media img:hover {
+    border-bottom: 1px solid #baff29;
+}
+
+footer p {
+    font-size: 13px;
+    width: 22em;
+    font-family: 'text';
+}
+
+.all-right {
+    position: absolute;
+    font-size: 13px;
+    margin: 4em 45.5em;
+    width: 17.4em;
+    font-family: 'text';
+}
+
+.login-footer {
+    position: absolute;
+    font-size: 15px;
+    margin: 0em 65em;
+    width: 5.1em;
+    font-family: 'text';
+}
+
+.login-footer:hover {
+    border-bottom: 2px solid #15191E;
+    color: #07190f;
+    font-weight: bold;
+}
+
+.all {
+    position: absolute;
+    font-size: 13px;
+    margin: 4em 68em;
+    width: 18.8em;
+}
+
+.all span {
+    color: #15191E;
+    font-weight: bold;
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+    footer {
+        padding: 1em; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .social-media {
+        gap: 0.5em; /* Reduce el espacio entre los íconos en pantallas más pequeñas */
+    }
+
+    .social-media img {
+        width: 1.5em; /* Reduce el tamaño de los íconos en pantallas más pequeñas */
+        height: 1.5em;
+    }
+
+    footer p {
+        font-size: 12px; /* Reduce el tamaño de la fuente del párrafo */
+    }
+
+    .login-footer {
+        font-size: 14px; /* Ajusta el tamaño de la fuente del enlace */
+    }
+
+    .all-right, .all {
+        font-size: 12px; /* Reduce el tamaño de la fuente de los textos */
+    }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+    footer {
+        padding: 0.8em; /* Reduce aún más el padding */
+    }
+
+    .social-media {
+        flex-direction: column; /* Apila los íconos verticalmente en pantallas móviles */
+        gap: 0.5em; /* Reduce el espacio entre los íconos */
+    }
+
+    .social-media img {
+        width: 1.2em; /* Ajusta el tamaño de los íconos en pantallas móviles */
+        height: 1.2em;
+    }
+
+    footer p {
+        font-size: 11px; /* Reduce el tamaño de la fuente del párrafo en móviles */
+    }
+
+    .login-footer {
+        font-size: 13px; /* Ajusta el tamaño de la fuente del enlace en móviles */
+    }
+
+    .all-right, .all {
+        font-size: 11px; /* Reduce el tamaño de la fuente de los textos en móviles */
+    }
+}

@@ -1,0 +1,274 @@
+@import '../../settings/variables.css';
+@import '../../settings/fonts.css';
+
+/* Estilo general para el formulario */
+.form-container {
+    position: absolute;
+    top: 10%;
+    left: 7%;
+    padding: 2em 17em;
+    border-radius: 10px;
+    filter: drop-shadow(10px 7px 19px var(--color-four));
+}
+
+/* Estilo para el título del formulario */
+.form-title {
+    font-weight: bold;
+    font-family: 'titleForm';
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Descripción del formulario */
+.form-description {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 2em;
+    font-family: 'text';
+}
+
+/* Agrupación de campos del formulario */
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-group textarea {
+    width: 95%;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+.form-group select {
+    filter: drop-shadow(10px 7px 19px var(--color-four));
+    display: block;
+    font-family: 'text';
+    opacity: 0.7;
+    margin-bottom: 0.5em;
+    padding: 1.2em 1.4em;
+    border-radius: 7px;
+    transition: all .3s ease;
+}
+
+.form-group select:active {
+    background-color: var(--color-five);
+    color: var(--text-two);
+}
+
+.form-group select option {
+    font-family: 'text';
+}
+
+/* Estilo general para las etiquetas */
+.form-group label {
+    display: block;
+    font-family: 'titleForm';
+    opacity: 0.7;
+    margin-bottom: 0.5em;
+}
+
+/* Estilo general para los campos de entrada */
+.form-group input {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(7, 25, 15, 0.1);
+    color: #ffffff;
+    font-family: 'text';
+}
+
+.form-group small {
+    font-family: 'text';
+}
+
+/* Estilo de los campos cuando están enfocados */
+.form-group input:focus {
+    background-color: #15191E;
+    color: #ffffff;
+    border: 1px solid var(--color-five);
+    outline: none;
+}
+
+/* Botón de envío */
+.form-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background-color: var(--color-six);
+    color: var(--text-two);
+    border: 2px solid var(--color-five);
+    border-radius: 4px;
+    font-family: 'titleForm';
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Hover del botón de envío */
+.form-submit-btn:hover {
+    background-color: var(--color-five);
+    border: 3px solid var(--text-two);
+    filter: drop-shadow(10px 7px 10px var(--hover));
+}
+
+/* Estilo para el enlace de inicio de sesión */
+.login {
+    display: block; /* Hace que el enlace ocupe todo el ancho disponible */
+    font-family: 'text';
+    color: #000;
+    text-align: center; /* Centra el texto */
+    margin-top: 40.4em; /* Espacio encima del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    margin-bottom: 1.3em;
+}
+
+/* Estilo al pasar el ratón sobre el enlace */
+.login:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
+
+
+/* AQUI VA EL MODAL PARA DECIRLE AL USUARIO QUE SE REGISTRO CORRECTAMENTE */
+/* Estilos generales para los modales */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Posiciona el modal en relación a la ventana del navegador */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo de la ventana */
+    height: 100%; /* Alto completo de la ventana */
+    overflow: auto; /* Habilita el desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con opacidad */
+}
+
+.modal-content span {
+    font-family: 'text';
+}
+
+.alert-alert-danger {
+    text-align: center;
+    width: 50%; /* O cualquier ancho deseado */
+    margin: 0 auto; /* Esto centrará el elemento horizontalmente */
+    font-family: 'text';
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 30em;
+}
+
+.alert-alert-danger li {
+    list-style: none;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Estilo del botón de cierre */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo del mensaje dentro del modal */
+.modal-content p {
+    font-size: 16px; 
+    color: #333;
+    text-align: center;
+}
+
+
+
+/* Estilos generales para el formulario en móviles */
+@media (max-width: 767px) {
+    .form-container {
+        position: relative;
+        top: 5%;
+        left: 0;
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 1.5em;
+        margin-top: 5em;
+    }
+
+    .form-title {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .form-description {
+        font-size: 0.9em;
+        padding-bottom: 1.5em;
+    }
+
+    .form-group {
+        margin-bottom: 1em;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group input {
+        padding: 0.8em;
+        font-size: 0.9em;
+    }
+
+    .form-submit-btn {
+        padding: 0.8em;
+        font-size: 1em;
+    }
+}
+
+/* Estilos generales para el formulario en tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-container {
+        width: 80%;
+        max-width: 600px;
+        margin-top: 5em;
+    }
+
+    .form-title {
+        font-size: 2em;
+    }
+
+    .form-description {
+        font-size: 1em;
+    }
+
+    .form-group {
+        margin-bottom: 1.2em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input {
+        padding: 1em;
+        font-size: 1em;
+    }
+
+    .form-submit-btn {
+        padding: 1em;
+        font-size: 1.1em;
+    }
+}

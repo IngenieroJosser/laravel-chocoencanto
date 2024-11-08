@@ -1,0 +1,84 @@
+@import '../settings/variables.css';
+
+#services {
+    padding: 3.5em 0;
+    margin: 4.7em auto;
+}
+
+#services h3 {
+    text-align: center;
+    font-family: 'titleForm';
+    margin-bottom: 2em;
+}
+
+.services-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.service-item {
+    text-align: center;
+    width: 300px;
+}
+
+.service-item img {
+    background-color: var(--color-five);
+    border-radius: 11px;
+    padding: 0.4em 1em;
+    margin-bottom: 1em;
+}
+
+.service-item h3 {
+    font-family: 'titleForm';
+    font-size: 1.5em;
+}
+
+.service-item p {
+    font-family: 'text';
+    font-size: 1em;
+    padding-top: 0.5em;
+    line-height: 1.5em;
+    color: var(--text);
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .services-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .service-item {
+        width: 80%;
+    }
+
+    .service-item h3 {
+        font-size: 1.2em;
+    }
+
+    .service-item p {
+        font-size: 0.9em;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    #services {
+        padding: 2em 0;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .service-item h3 {
+        font-size: 1em;
+    }
+
+    .service-item p {
+        font-size: 0.85em;
+        padding: 0.5em;
+    }
+}

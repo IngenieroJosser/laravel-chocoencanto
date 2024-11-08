@@ -1,0 +1,267 @@
+@import '../../settings/variables.css';
+@import '../../settings/fonts.css';
+
+.header--dashboard {
+    z-index: 1;
+}
+
+.header--dashboard a {
+    font-family: 'text';
+    text-decoration: none;
+    color: var(--color-four);
+}
+
+.header--dashboard .profile .profesion--user span {
+    font-family: 'text';
+    margin-left: -1.3em;
+}
+
+.header--dashboard .profile .profesion--user p {
+    margin-left: -2.1em;
+    font-family: 'text';
+}
+aside {
+    position: fixed;
+    height: 100%;
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    position: absolute;
+    padding: 7.7em 3em;
+
+}
+aside img {
+    width: 24px;
+    height: 24px;
+    transition: all .2s ease-in;
+}
+aside img:hover {
+    filter: drop-shadow(20px 10px 20px var(--hover));
+}
+
+.header--dashboard {
+    display: flex;
+    gap: 60.5em;
+}
+
+.header--dashboard .profile {
+    display: flex;
+    gap: 1em;
+}
+
+.header--dashboard .profile span {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 0.5em;
+    font-family: 'text';
+}
+
+.header--dashboard .profile p {
+    font-size: 12px;
+    margin-left: -1em;
+    font-family: 'text';
+}
+
+.header--dashboard .profile img {
+    background-color: var(--color-four); /* reemplaza con el valor de $color-four */
+    width: 2em;
+    height: 2em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 0.2em;
+}
+
+.container--admin {
+    display: flex;
+    z-index: -1;
+}
+
+.container--admin .data-analytics {
+    /* 
+    .data {
+        position: absolute;
+        left: 30%;
+        top: 10%;
+        width: 40%;
+        height: 80%;
+        border-radius: 11px;
+        object-fit: cover;
+    }
+    */
+    
+    .banner--admin {
+        display: flex;
+        gap: 4.9em;
+        position: absolute;
+        margin: 7em 10.2em;
+    }
+
+    .banner--admin .content--admin {
+        display: flex;
+        background-color: var(--color-four); /* reemplaza con el valor de $color-four */
+        width: 210px;
+        height: 117px;
+        border-radius: 7px;
+    }
+
+    .banner--admin .content--admin img {
+        margin: 1em 1em;
+        width: 24px;
+        height: 24px;
+    }
+
+    .banner--admin .content--admin p {
+        margin-top: 1em;
+        color: var(--text-two); /* reemplaza con el valor de $text-two */
+        font-weight: bold;
+        font-family: 'text';
+    }
+
+    .banner--admin .content--admin .content {
+        position: absolute;
+        font-size: 12px;
+        margin: 4.4em 2em;
+    }
+
+    .banner--admin .content--admin .content h6 {
+        color: var(--color-five); /* reemplaza con el valor de $color-five */
+        font-weight: lighter;
+        font-family: 'titleForm';
+    }
+
+    .banner--admin .banner-a-2 {
+        display: flex;
+        width: 239px;
+        height: 117px;
+        background-color: var(--color-four); /* reemplaza con el valor de $color-four */
+        border-radius: 7px;
+        margin-left: -1.2em;
+    }
+
+    .banner--admin .banner-a-2 img {
+        margin: 1em 1em;
+        width: 24px;
+        height: 24px;
+    }
+
+    .banner--admin .banner-a-2 p {
+        margin-top: 1em;
+        color: var(--text-two); /* reemplaza con el valor de $text-two */
+        font-weight: bold;
+        font-family: 'text';
+    }
+
+    .banner--admin .banner-a-2 .content {
+        position: absolute;
+        font-size: 12px;
+        margin: 4.4em 2em;
+    }
+
+    .banner--admin .banner-a-2 .content h6 {
+        color: var(--color-five); /* reemplaza con el valor de $color-five */
+        font-weight: lighter;
+        font-family: 'titleForm';
+    }
+
+    .banner-content {
+        background-color: var(--color-four); /* reemplaza con el valor de $color-four */
+        width: 787px;
+        height: 366px;
+        border-radius: 7px;
+        position: absolute;
+        margin: 15em 10.2em;
+    }
+
+    .banner-content p {
+        color: var(--text-two); /* reemplaza con el valor de $text-two */
+        font-weight: bold;
+        margin: 2em 4em;
+        font-family: 'text';
+    }
+
+    .banner-content .banner-admin {
+        display: flex;
+        gap: 2em;
+    }
+
+    .banner-content .banner-admin .content--admoin {
+        display: flex;
+        margin-top: -1.4em;
+    }
+
+    .banner-content .banner-admin .content--admoin p {
+        font-size: 13px;
+        font-family: 'text';
+    }
+
+    .banner-content img {
+        position: absolute;
+        top: 43%;
+        left: 5.5%;
+        display: inline-block;
+        animation-name: waveAnimation;
+        animation-duration: 4s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+.container--admin .data-analytics-grafic {
+    margin: 15em 63em;
+    background-color: var(--color-five); /* reemplaza con el valor de $color-five */
+    height: 366px;
+    border-radius: 7px;
+}
+
+.container--admin .data-analytics-grafic span {
+    position: absolute;
+    margin: 4em 3em;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'text';
+}
+
+.container--admin .data-analytics-grafic svg {
+    margin-top: 5.9em;
+    animation: spin 7s linear infinite;
+}
+
+.container--admin .data-analytics-grafic p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 2em;
+    margin: -4.4em 3.5em;
+    font-family: 'titleForm'; /* Asegúrate de que esta fuente esté importada en el CSS */
+}
+
+th, td {
+    font-family: 'text';
+    border: 1px solid var(--color-four);
+}
+
+table {
+    margin: 0 auto;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+

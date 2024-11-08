@@ -1,0 +1,16 @@
+:root {
+    --color-one: #55F5A3;
+    --color-two: #F6F4EE;
+    --color-two-: #bcb1b1;
+    --color-three: #9a9393;
+    --color-four: #15191E;
+    --color-five: #baff29;
+    --color-six: #051923;
+    --color-seven: #868F9F;
+    --text: #000000;
+    --text-two: #FFFFFF;
+    --hover: #07190f;
+    --text-two: #ffffff;
+    --bg: #f2f2f2;
+    --bg-hover: rgba(242, 242, 242, 0.4);
+}

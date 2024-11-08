@@ -1,0 +1,139 @@
+@import '../../settings/variables.css';
+@import '../../settings/fonts.css';
+
+.presentation {
+    display: flex;
+    padding-top: 7em;
+}
+
+.presentation .left-content {
+    padding: 6em 1.7em;
+}
+
+.presentation .left-content h1 {
+    font-size: 2em;
+    padding-left: 2em;
+    width: 20em;
+    line-height: 1.4em;
+    font-family: 'text';
+}
+
+.presentation .left-content p {
+    padding: .6em 4em;
+    padding-bottom: 1.7em;
+    font-family: 'text';
+}
+
+.presentation .left-content a:hover {
+    color: var(--text-two);
+}
+
+.presentation .left-content .see-you-soon {
+    background-color: var(--text-two);
+    border: 2px solid var(--color-five);
+    padding: .5em 1em;
+    border-radius: 11px;
+    margin-left: 3.8em;
+    font-family: 'text';
+    color: var(--text);
+    text-decoration: none;
+}
+
+.presentation .left-content .see-you-soon:hover {
+    background-color: var(--color-six);
+    color: var(--text-two);
+    border: 2px solid var(--color-six);
+}
+
+.presentation .right-content img {
+    width: 33em;
+    height: 28em;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.presentation .right-content p {
+    margin-left: 5.7em;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-six);
+    width: 21.4em;
+    font-family: 'text';
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+    .presentation {
+        flex-direction: column;
+        padding-top: 4em;
+    }
+
+    .presentation .left-content {
+        padding: 4em 1em;
+    }
+
+    .presentation .left-content h1 {
+        font-size: 1.5em;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .presentation .left-content p {
+        padding: .6em 1em;
+    }
+
+    .presentation .left-content .see-you-soon {
+        margin-left: 0;
+        width: auto;
+    }
+
+    .presentation .right-content {
+        margin-top: 2em;
+    }
+
+    .presentation .right-content img {
+        max-width: 100%;
+    }
+
+    .presentation .right-content p {
+        width: auto;
+        margin: 1em 0;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+    .presentation {
+        padding-top: 2em;
+    }
+
+    .presentation .left-content {
+        padding: 2em 1em;
+    }
+
+    .presentation .left-content h1 {
+        font-size: 1.2em;
+        padding-left: 0;
+    }
+
+    .presentation .left-content p {
+        padding: .6em 0;
+        font-size: 0.9em;
+    }
+
+    .presentation .left-content .see-you-soon {
+        padding: .4em 0.8em;
+        font-size: 0.9em;
+        margin-left: 0;
+    }
+
+    .presentation .right-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .presentation .right-content p {
+        font-size: 0.9em;
+        width: auto;
+        margin: 0;
+    }
+}

@@ -1,0 +1,56 @@
+@import '../settings/variables.css';
+
+.places {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en pantallas pequeñas */
+    gap: 2em;
+    justify-content: center;
+    margin-top: 7.11em;
+}
+
+.places img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 11px;
+    margin-top: 1em;
+    opacity: .6;
+    transition: all ease-in 0.2s;
+}
+
+.places img:hover {
+    opacity: 1;
+    flex-grow: 1;
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* Media Queries para Responsividad */
+
+/* Para tablets */
+@media (max-width: 768px) {
+    .places {
+        gap: 1.5em; /* Reduce el espacio entre las imágenes */
+        margin-top: 4em; /* Ajusta el margen superior */
+    }
+
+    .places img {
+        width: 8em; /* Reduce el tamaño de las imágenes */
+        height: 8em; /* Reduce el tamaño de las imágenes */
+    }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+    .places {
+        gap: 1em; /* Reduce aún más el espacio entre las imágenes */
+        margin-top: 2em; /* Ajusta el margen superior */
+    }
+
+    .places img {
+        width: 6em; /* Reduce aún más el tamaño de las imágenes */
+        height: 6em; /* Reduce aún más el tamaño de las imágenes */
+    }
+}
