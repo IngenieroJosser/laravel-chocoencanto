@@ -64,6 +64,11 @@
         });
     });
 
+    let userName = '';
+    let destination = '';
+    let numberOfPeople = '';
+    let tourDate = '';
+
     // Mostrar y ocultar el chatbox
     function toggleChatbox() {
         var chatbox = document.getElementById('chatbox');
@@ -88,12 +93,96 @@
             document.getElementById('chatbox-input').value = '';
 
             // Redirigir a WhatsApp con el mensaje
-            setTimeout(function() {
-                var whatsappLink = `https://wa.me/573232842193?text=${encodeURIComponent(message)}`;
-                window.open(whatsappLink, '_blank');
-            }, 500);
+            handleUserResponse(message);
         }
     }
+
+    // Función para iniciar la conversación
+    function startConversation() {
+        var chatboxContent = document.getElementById('chatbox-content');
+        var introMessage = document.createElement('p');
+        introMessage.textContent = "¡Hola! Bienvenido a ChocóEncanto. ¿Te gustaría hacer una reserva para un tour?";
+        introMessage.style.backgroundColor = '#ffffff';
+        introMessage.style.padding = '.5em .8em';
+        introMessage.style.borderRadius = '10px';
+        introMessage.style.textAlign = 'left';
+        introMessage.style.fontFamily = 'text';
+        chatboxContent.appendChild(introMessage);
+    }
+
+    // Función para manejar las respuestas del usuario
+    function handleUserResponse(message) {
+        var chatboxContent = document.getElementById('chatbox-content');
+        
+        if (!userName) {
+            userName = message;
+            var botMessage = document.createElement('p');
+            botMessage.textContent = `¡Hola ${userName}! ¿Qué destino turístico te gustaría visitar?`;
+            botMessage.style.backgroundColor = '#ffffff';
+            botMessage.style.padding = '.5em .8em';
+            botMessage.style.borderRadius = '10px';
+            botMessage.style.textAlign = 'left';
+            botMessage.style.fontFamily = 'text';
+            chatboxContent.appendChild(botMessage);
+        } else if (!destination) {
+            destination = message;
+            var botMessage = document.createElement('p');
+            botMessage.textContent = `¡Genial! ¿Cuántas personas asistirán al tour?`;
+            botMessage.style.backgroundColor = '#ffffff';
+            botMessage.style.padding = '.5em .8em';
+            botMessage.style.borderRadius = '10px';
+            botMessage.style.textAlign = 'left';
+            botMessage.style.fontFamily = 'text';
+            chatboxContent.appendChild(botMessage);
+        } else if (!numberOfPeople) {
+            // Validación para la cantidad de personas
+            if (isNaN(message) || parseInt(message) <= 0) {
+                var botMessage = document.createElement('p');
+                botMessage.textContent = "Por favor, ingresa un número mayor a cero para la cantidad de personas.";
+                botMessage.style.backgroundColor = '#ffffff';
+                botMessage.style.padding = '.5em .8em';
+                botMessage.style.borderRadius = '10px';
+                botMessage.style.textAlign = 'left';
+                botMessage.style.fontFamily = 'text';
+                chatboxContent.appendChild(botMessage);
+            } else {
+                numberOfPeople = message;
+                var botMessage = document.createElement('p');
+                botMessage.textContent = `Perfecto. ¿Qué fechas te interesan para la reserva?`;
+                botMessage.style.backgroundColor = '#ffffff';
+                botMessage.style.padding = '.5em .8em';
+                botMessage.style.borderRadius = '10px';
+                botMessage.style.textAlign = 'left';
+                botMessage.style.fontFamily = 'text';
+                chatboxContent.appendChild(botMessage);
+            }
+        } else if (!tourDate) {
+            tourDate = message;
+            var botMessage = document.createElement('p');
+            botMessage.textContent = `¡Todo listo para tu reserva! Recapitulamos: ${destination}, ${numberOfPeople} personas, en ${tourDate}. ¿Está todo correcto?`;
+            botMessage.style.backgroundColor = '#ffffff';
+            botMessage.style.padding = '.5em .8em';
+            botMessage.style.borderRadius = '10px';
+            botMessage.style.textAlign = 'left';
+            botMessage.style.fontFamily = 'text';
+            chatboxContent.appendChild(botMessage);
+
+            // Redirigir a WhatsApp
+            setTimeout(function() {
+                var whatsappMessage = `¡Hola! Quiero hacer una reserva en ChocóEncanto. Destino: ${destination}, ${numberOfPeople} personas, fecha: ${tourDate}.`;
+                var whatsappLink = `https://wa.me/573232842193?text=${encodeURIComponent(whatsappMessage)}`;
+                window.open(whatsappLink, '_blank');
+            }, 1500);
+        }
+
+        // Limitar el scroll
+        chatboxContent.scrollTop = chatboxContent.scrollHeight;
+    }
+
+    // Iniciar la conversación automáticamente
+    window.onload = function() {
+        startConversation();
+    };
 
     // Asignar la función de abrir chatbox al botón de WhatsApp
     document.getElementById('whatsapp-button').addEventListener('click', toggleChatbox);
