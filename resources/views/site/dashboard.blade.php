@@ -5,30 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url('../../../../css/components/admin/dashboard.css') }}">
     <title>Admin - ChocóEncanto</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
         {{-- resources/views/admin/header_dashboard.blade.php --}}
     <header class="header--dashboard">
-        <a href=""><h4>@ChocóEncanto</h4></a>
+        <a href="{{ url('/') }}"><h4>@ChocóEncanto</h4></a>
 
-        <div class="profile">
-            <div class="profesion--user">
-                <span>Josser Cordoba</span>
-                <p>System Engineer</p>
-            </div>
-            <img src="{{ asset('assets/img/photo--user.png') }}" alt="foto de perfil de usuario">
-            {{-- SVG icon code can be included here if necessary --}}
+        <div class="log-sign" style="padding: 1em 0;  margin-left: -15em; display: flex; display: flex; gap: 1em;">
+            @if (Auth::check())
+                <span style="font-family: 'text';">Bienvenido,<strong>  Admin {{ Auth::user()->user }}</strong>!</span>
+                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button style="background-color: var(--color-four); padding: .5em 1em; border-radius: 11px; color: var(--text-two); font-family: 'text';" type="submit" class="btn1">Cerrar sesión</button>
+                </form>
+            @else
+                <a style="margin-left: 2em;" href="{{ url('/login') }}" class="btn1">Iniciar sesión</a>
+                <!-- <a href="{{ url('/register') }}" class="btn2">Únete</a> -->
+            @endif
         </div>
     </header>
 
-    <aside>
-        <a href=""><img src="{{ asset('assets/icons/loupe.png') }}" alt="buscar"></a>
-        <a href=""><img src="{{ asset('assets/icons/home.png') }}" alt="inicio"></a>
-        <a href=""><img src="{{ asset('assets/icons/finish.png') }}" alt="bandera"></a>
-        <a href=""><img src="{{ asset('assets/icons/data-analytics.png') }}" alt="análisis de información"></a>
-        <a href=""><img src="{{ asset('assets/icons/user.png') }}" alt="usuario"></a>
-        <a href=""><img src="{{ asset('assets/icons/settings.png') }}" alt="configuración"></a>
-    </aside>
+    
 
     {{-- resources/views/admin/data_analytics.blade.php --}}
     <section class="container--admin">
@@ -75,16 +73,11 @@
 
             <div class="banner-content">
                 <p>Rendimiento de ventas</p>
-                <div class="banner-admin">
-                    <div class="content--admoin">
-                        <p>🔵 Paquetes</p>
-                        <p>🟡 Habitaciones</p>
-                        <p>🟢 Personas</p>
-                        <p>🟤 Número de viajes</p>
-                    </div>
-                </div>
-                <img src="{{ asset('assets/img/analytics.png') }}" alt="imagen grafica">
+                
+                <!-- Aquí colocamos el canvas para el gráfico -->
+                <canvas id="salesChart" width="400" height="200"></canvas>
             </div>
+
         </section>
 
         <div class="data-analytics-grafic">
@@ -96,75 +89,33 @@
         </div>
     </section>
 
-    {{-- resources/views/admin/recent_customers.blade.php --}}
-    @php
-        $customers = [
-            [
-                'name' => 'Jerry Mattedi',
-                'orderDate' => '13 May, 2021:10:10 AM',
-                'phoneNumber' => '251-461-5362',
-                'location' => 'New York',
-                'registered' => 'Yes',
-                'details' => 'Qationa',
-            ],
-            [
-                'name' => 'Eliana Vasilov',
-                'orderDate' => '18 May, 2021:3:22 PM',
-                'phoneNumber' => '171-534-1262',
-                'location' => 'Ontario',
-                'registered' => 'No',
-                'details' => 'Qations',
-            ],
-            [
-                'name' => 'Alvis Den',
-                'orderDate' => '17 May, 2021:2:15 PM',
-                'phoneNumber' => '974-661-5110',
-                'location' => 'Milan',
-                'details' => 'Details',
-            ],
-            [
-                'name' => 'Lisa Shipy',
-                'orderDate' => '23 Apr, 2021:15PM',
-                'phoneNumber' => '541-661-3042',
-                'location' => '1 3 4 5 Octions',
-                'details' => 'San Francisco',
-                'registered' => 'Yes',
-            ],
-            [
-                'name' => 'Josser Cordoba',
-                'orderDate' => '23 Apr, 2023:15PM',
-                'phoneNumber' => '323-284-2193',
-                'location' => 'Quibdó - Chocó - Colombia',
-                'details' => 'Poblado - Flores de Buenaños',
-                'registered' => 'Yes',
-            ],
-        ];
-    @endphp
-
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Fecha de Pedido</th>
-                <th>Número de Teléfono</th>
-                <th>Ubicación</th>
-                <th>Inscrito</th>
-                <th>Detalles</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($customers as $customer)
-                <tr>
-                    <td>{{ $customer['name'] }}</td>
-                    <td>{{ $customer['orderDate'] }}</td>
-                    <td>{{ $customer['phoneNumber'] }}</td>
-                    <td>{{ $customer['location'] }}</td>
-                    <td>{{ $customer['registered'] ?? '-' }}</td>
-                    <td>{{ $customer['details'] }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            const salesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo'],
+                    datasets: [{
+                        label: 'Reservas',
+                        data: [10, 15, 20],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+</script>
 
 </body>
 </html>

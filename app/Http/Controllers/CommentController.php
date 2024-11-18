@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\UserModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Asegúrate de incluir esta línea
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -15,7 +16,7 @@ class CommentController extends Controller
         ]);
 
         Comment::create([
-            'user_id' => Auth::id(), // Obtener el ID del usuario autenticado
+            'user_id' => Auth::id(),
             'comment' => $request->comment,
         ]);
 
@@ -24,7 +25,9 @@ class CommentController extends Controller
 
     public function index()
     {
-        $comments = Comment::with('user')->get(); // Cargar los comentarios con la relación de usuario
-        return view('comments.index', compact('comments'));
+        $comments = Comment::with('user')->get(); // Cargar comentarios con el usuario relacionado
+        $users = UserModel::all(); // Obtener todos los registros de la tabla `users`
+        
+        return view('comments.index', compact('comments', 'users'));
     }
 }

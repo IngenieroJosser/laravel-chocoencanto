@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\UserModel; // Asegúrate de que este modelo sea compatible con MongoDB
 
 class LoginController extends Controller
 {
@@ -23,20 +24,26 @@ class LoginController extends Controller
             'password' => 'required|string|min:8',
         ]);
 
-        // Intentar iniciar sesión
+        // Intentar autenticar al usuario
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Redirigir a la página de reservas
-            return redirect()->intended('/reservas'); // o usa route('reservas') si la tienes nombrada
+            // Obtener el rol del usuario autenticado
+            $user = Auth::user();
+
+            // Redirección basada en el rol
+            if ($user->rol === 'admin') {
+                return redirect()->intended('/dashboard');
+            } else {
+                return redirect()->intended('/reservas');
+            }
         }
 
-        // Si la autenticación falla, redirigir de nuevo con un mensaje de error
+        // Si la autenticación falla, redirigir con un mensaje de error
         return back()->withErrors([
             'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
         ]);
     }
-
 
     // Cerrar sesión
     public function logout(Request $request)

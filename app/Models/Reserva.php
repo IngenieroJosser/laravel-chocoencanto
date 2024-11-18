@@ -2,18 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model; 
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Reserva extends Model
 {
-    use HasFactory;
+    // Nombre de la colección en MongoDB
+    protected $collection = 'reserves';
 
-    // Aqui va el nombre de la tabla, me debo de asegurar que concidan
-    protected $table = 'reserves'; // Añade esta línea
-
-    use HasFactory;
-
+    // Campos asignables en masa
     protected $fillable = [
         'destino',
         'fecha_inicio',
@@ -25,10 +21,12 @@ class Reserva extends Model
         'alimentacion',
         'comentarios',
         'metodo_pago',
+        'user_id'
     ];
 
-    // public function userReserves()
-    // {
-    //     return $this->belongsTo(Reserva::class);
-    // }
+    // Relación con el modelo User (una reserva pertenece a un usuario)
+    public function user()
+    {
+        return $this->belongsTo(UserModel::class, 'user_id', '_id');
+    }
 }

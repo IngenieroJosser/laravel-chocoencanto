@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('partials.header')
-    <form action="/site/register" method="post" class="form-container" id="registerForm">
+    <form action="/register" method="post" class="form-container" id="registerForm">
         @csrf
         <h2 class="form-title">Únete a disfrutar</h2>
         <p class="form-description">Únete a disfrutar ingresando tu nombre, dirección de correo electrónico y contraseña para disfrutar.</p>

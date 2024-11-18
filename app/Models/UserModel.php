@@ -2,46 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Jenssegers\Mongodb\Eloquent\Model; // Modelo de MongoDB
+use Illuminate\Auth\Authenticatable; // Trait de autenticación
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class UserModel extends Authenticatable implements MustVerifyEmail
+class UserModel extends Model implements AuthenticatableContract
 {
-    use HasFactory, Notifiable;
+    use Authenticatable;
 
-    // Aqui va el nombre de la tabla, me debo de asegurar que concidan
-    protected $table = 'users'; // Añade esta línea
+    protected $connection = 'mongodb'; // Conexión MongoDB
+    protected $table = 'users'; // Nombre de la colección
+    protected $primaryKey = '_id'; // Llave primaria (Mongo usa `_id` por defecto)
 
-    /**
-     * Los atributos que se pueden asignar de forma masiva.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'user',
-        'email',
-        'password',
-    ];
-
-    /**
-     * Los atributos que deben ser ocultados para los arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * Los atributos que deberían ser convertidos a tipos nativos.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $fillable = ['user', 'email', 'password', 'rol'];
+    protected $hidden = ['password']; // Oculta la contraseña al serializar
 }
-

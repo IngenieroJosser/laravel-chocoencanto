@@ -29,7 +29,7 @@ Route::get('/experiencias', function () {
 });
 
 Route::get('/register', function () {
-    return view('site/register');
+    return view('site.register'); // Ajusta el nombre de la vista según corresponda
 });
 
 Route::get('/login', function () {
@@ -41,14 +41,11 @@ Route::get('/dashboard', function () {
 });
 
 
-
 //                  controller
 // controlador de registro
 use App\Http\Controllers\Auth\RegisterController;
 
-Route::post('site/register', [RegisterController::class, 'registerUser']);
-
-
+Route::post('/register', [RegisterController::class, 'registerUser']);
 
 // controlador de inicio de sesión
 use App\Http\Controllers\Auth\LoginController;
@@ -63,10 +60,24 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-
 // controlador para las reserva
 use App\Http\Controllers\Reserves\ReservaController;
 
 // Rutas para las reservas
 Route::get('/reservas/create', [ReservaController::class, 'create'])->name('reservas_create');
 Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas_store');
+Route::get('/reserve-data', [ReservaController::class, 'getReserveData']);
+
+// Lista de SELECT * FROM 'reserves'
+Route::get('/reserves', [ReservaController::class, 'index'])->name('reserves.index');
+
+
+
+// controlador para la consulta de la lista de usuarios
+use App\Http\Controllers\AdminController;
+
+// Ruta para listar usuarios
+Route::get('/dashboard', [AdminController::class, 'dashboardListUsers'])->name('dashboardListUsers');
+
+// Ruta para listar reservas
+Route::get('/dashboard/reserves', [AdminController::class, 'dashboardListReserves'])->name('dashboardListReserves');

@@ -57,35 +57,35 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error:', error);
-        
+            
             // Si la respuesta contiene errores, mostrarlos en el modal
             if (error.errors) {
                 const errorMessage = error.errors[Object.keys(error.errors)[0]][0]; // Obtiene el primer error
                 const errorModal = document.getElementById('errorModal');
                 const errorMessageElement = document.getElementById('errorMessage');
-        
+            
                 errorMessageElement.textContent = errorMessage; // Muestra el mensaje de error
                 errorModal.style.display = 'block'; // Muestra el modal de error
             } else {
                 const errorMessage = 'Ocurrió un error inesperado.';
                 const errorModal = document.getElementById('errorModal');
                 const errorMessageElement = document.getElementById('errorMessage');
-        
+            
                 errorMessageElement.textContent = errorMessage; // Muestra el mensaje de error
                 errorModal.style.display = 'block'; // Muestra el modal de error
             }
-        
+            
             // Cierra el modal de error al hacer clic en la 'x'
             document.querySelector('.close').onclick = function() {
                 errorModal.style.display = 'none';
             };
-        
+            
             // Cierra el modal de error al hacer clic fuera de él
             window.onclick = function(event) {
                 if (event.target === errorModal) {
                     errorModal.style.display = 'none';
                 }
             };
-        });                
+        });                        
     });
 });

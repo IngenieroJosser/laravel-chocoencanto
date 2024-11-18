@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
             body: formData,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                'Accept': 'application/json' // Solicita respuesta en formato JSON
+                'Accept': 'application/json'
             }
-        })
+        })        
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la respuesta del servidor.');

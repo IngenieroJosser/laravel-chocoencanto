@@ -38,18 +38,18 @@
         </nav>
 
         <div class="log-sign">
-            @if (session('user_name'))
-                <span>Hola, <strong>{{ session('user_name') }}</strong>!</span>
+            @if (Auth::check())
+                <span>Hola, <strong>{{ Auth::user()->user }}</strong>!</span>
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
-                    <a href="{{ route('logout') }}"></a>
-                    <button type="submit" class='btn1'>Cerrar sesión</button>
+                    <button type="submit" class="btn1">Cerrar sesión</button>
                 </form>
             @else
-                <a href="{{ url('/login') }}" class='btn1'>Iniciar sesión</a>
-                <a href="{{ url('/register') }}" class='btn2'>Únete</a>
+                <a href="{{ url('/login') }}" class="btn1">Iniciar sesión</a>
+                <a href="{{ url('/register') }}" class="btn2">Únete</a>
             @endif
         </div>
+
     </div>
 </header>
 
