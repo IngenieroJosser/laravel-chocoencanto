@@ -20,7 +20,7 @@
                     <button style="background-color: var(--color-four); padding: .5em 1em; border-radius: 11px; color: var(--text-two); font-family: 'text';" type="submit" class="btn1">Cerrar sesión</button>
                 </form>
             @else
-                <a style="margin-left: 2em;" href="{{ url('/login') }}" class="btn1">Iniciar sesión</a>
+                <a style="margin-left: 2em;" href="{{ route('logout') }}" class="btn1">Iniciar sesión</a>
                 <!-- <a href="{{ url('/register') }}" class="btn2">Únete</a> -->
             @endif
         </div>
