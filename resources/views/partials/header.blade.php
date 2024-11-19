@@ -101,7 +101,7 @@ function sendMessage() {
 function startConversation() {
     var chatboxContent = document.getElementById('chatbox-content');
     var introMessage = document.createElement('p');
-    introMessage.textContent = "¡Hola! Bienvenido a ChocóEncanto. ¿Te gustaría hacer una reserva para un tour?";
+    introMessage.textContent = "¡Hola! Bienvenido a ChocóEncanto. ¿Cómo te llamás?";
     introMessage.style.backgroundColor = '#ffffff';
     introMessage.style.padding = '.5em .8em';
     introMessage.style.borderRadius = '10px';
