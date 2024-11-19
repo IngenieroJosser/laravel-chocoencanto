@@ -50,6 +50,7 @@ form input {
     border-radius: 4px;
     background-color: rgba(7, 25, 15, 0.1);
     color: #ffffff;
+    filter: drop-shadow(10px 7px 19px rgba(21, 25, 30, 0.5));
 }
 
 form input:focus {
@@ -67,6 +68,7 @@ button.form-submit-btn {
     cursor: pointer;
     display: block;
     margin: 2em auto;
+    filter: drop-shadow(10px 7px 19px rgba(21, 25, 30, 0.5));
 }
 
 button.form-submit-btn:hover {
@@ -81,6 +83,7 @@ form a {
     display: block;
     text-align: center;
     margin-top: 1em;
+    filter: drop-shadow(10px 7px 19px rgba(21, 25, 30, 0.5));
 }
 
 /* Media queries para diferentes tamaños de pantalla */
