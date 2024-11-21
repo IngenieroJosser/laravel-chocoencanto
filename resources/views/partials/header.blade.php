@@ -42,7 +42,7 @@
                 <span>Hola, <strong>{{ Auth::user()->user }}</strong>!</span>
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
-                    <button type="submit" class="btn1">Cerrar sesión</button>
+                    <button type="submit" class="btn1" style="color: #000;">Cerrar sesión</button>
                 </form>
             @else
                 <a href="{{ url('/login') }}" class="btn1">Iniciar sesión</a>

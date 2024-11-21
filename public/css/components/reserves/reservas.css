@@ -1,170 +1,103 @@
-@import '../../settings/variables.css';
 @import '../../settings/fonts.css';
+@import '../../settings/variables.css';
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'text';
     background-color: var(--bg);
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.form-container h2 {
-    font-family: 'titleForm';
-}
-
-p {
-    font-family: 'text';
-}
-
-.container {
-    max-width: 700px;
-    margin: 2em auto;
-    padding: 2.5em;
-    background-color: #ffffff;
+.form-wrapper {
+    max-width: 500px;
+    padding: 2em;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
-.container:hover {
-    transform: translateY(-5px);
 }
 
 .form-container {
+    margin-top: 46em;
     display: flex;
     flex-direction: column;
-    filter: drop-shadow(10px 7px 19px var(--color-four));
-    padding: 10em;
 }
 
 .form-title {
     font-size: 2em;
-    color: #2c3e50;
-    margin-bottom: 0.5em;
     text-align: center;
+    color: var(--color-four);
+    margin-bottom: 1em;
+    font-family: 'titleForm';
 }
 
 .form-description {
-    color: #7f8c8d;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
+    color: var(--color-seven);
 }
 
 .form-group {
     margin-bottom: 1.5em;
-    width: 98%;
-    margin-top: 1em;
 }
 
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
+input,
 select,
-textarea, 
-select {
+textarea {
     width: 100%;
     padding: 0.8em;
-    border: 1px solid #bdc3c7;
+    border: 1px solid var(--color-three);
     border-radius: 5px;
     font-size: 1em;
-    transition: border-color 0.3s;
+    box-sizing: border-box;
     font-family: 'text';
 }
 
-label, option, legend {
-    font-family: 'text';
+textarea {
+    height: 100px;
+    resize: none;
 }
 
-input[type="text"]:focus,
-input[type="date"]:focus,
-input[type="number"]:focus,
+input:focus,
 select:focus,
 textarea:focus {
-    border-color:var(--color-four);
     outline: none;
+    border-color: var(--color-four);
+    box-shadow: 0 0 5px var(--color-four);
 }
 
 fieldset {
-    border: 1px solid #bdc3c7;
+    border: 1px solid var(--color-three);
     padding: 1em;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-hover);
 }
 
 legend {
+    color: var(--color-four);
     font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #34495e;
-    font-family: 'titleForm';
 }
 
-.form-submit-btn {
-    padding: 1em;
-    background-color: var(--color-four);
-    border: 2px solid var(--color-five);
-    color: white;
+button {
+    width: 100%;
+    padding: 0.8em;
     border: none;
     border-radius: 5px;
+    background-color: var(--color-six);
+    color: var(--text-two);
+    border: 2px solid var(--color-five);
+    border-radius: 4px;
+    font-family: 'titleForm';
+    color: white;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: 'titleForm';
+    transition: background-color 0.3s ease;
 }
 
-.form-submit-btn:hover {
+button:hover {
     background-color: var(--color-five);
-    color: #FFF;
-    border: 4px solid #FFF;
-}
-
-.alert {
-    padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 5px;
-}
-
-.alert-success {
-    background-color: #dff0d8;
-    color: #3c763d;
-}
-
-.alert-danger {
-    background-color: #f2dede;
-    color: #a94442;
-}
-
-.modal {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Queda en la posición del viewport */
-    z-index: 1000; /* Para que esté encima de otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%; /* 100% de ancho */
-    height: 100%; /* 100% de alto */
-    overflow: auto; /* Si hay contenido, habilita el desplazamiento */
-    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo con opacidad */
-}
-
-.modal-content {
-    background-color: #ffffff;
-    margin: 15% auto; /* 15% desde la parte superior y centrado */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 90%; /* Ancho del modal */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
