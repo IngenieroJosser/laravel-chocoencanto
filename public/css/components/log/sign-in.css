@@ -5,8 +5,8 @@
 .form-container {
     top: 10%;
     left: 7%;
-    padding: 2em 17em;
-    border-radius: 10px;
+    padding: 2em 19em;
+    border-radius: 19px;
     filter: drop-shadow(10px 7px 19px var(--color-four));
     position: static;
     max-width: 400px;
