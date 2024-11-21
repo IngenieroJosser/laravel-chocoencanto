@@ -13,7 +13,7 @@
     <!-- Contenedor del menú -->
     <div class="menu-content">
         <nav>
-            <a href="{{ auth()->check() ? url('/site/reservas') : url('/login') }}">Reservas</a>
+            <a href="{{ auth()->check() ? url('/reservas') : url('/login') }}">Reservas</a>
             <a href="#">Experiencias</a>
             <!-- Botón flotante de WhatsApp -->
             <div id="whatsapp-button" style="position: fixed; bottom: 45px; right: 20px;">

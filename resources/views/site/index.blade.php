@@ -17,7 +17,7 @@
         <div class="left-content">
             <h1>Un viaje al corazón del Pacífico colombiano, donde la tradición y la modernidad se encuentran.</h1>
             <p>Reserva tu viaje hoy y vive la experiencia a lo Chocó Encanto.</p>
-            <a href="{{ auth()->check() ? url('/site/reservas') : url('/login') }}" class='see-you-soon'>¡Haz tu reserva!</a>
+            <a href="{{ auth()->check() ? url('/reservas') : url('/login') }}" class='see-you-soon'>¡Haz tu reserva!</a>
         </div>
 
         <div class="right-content">
