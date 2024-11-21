@@ -9,8 +9,8 @@ header {
     justify-content: space-around;
     align-items: center;
     padding: 1.3em 2em;
-    background-color: var(--bg-hover);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* background-color: var(--bg-hover); */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     z-index: 100;
     margin-bottom: 3em;
 }
