@@ -61,49 +61,38 @@
     </section>
 
 
-    <div class='content-user'>
-        <div class="testimony-box">
-            <div class="user">
-                <img src="{{ asset('img/user1.jpg') }}" alt="Usuario" />
-                <p class='name'>Josser Cordoba</p>
-                <svg aria-label="Verificado" class="verificed" color="rgb(0, 149, 246)" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12">
-                    <title>Verificado</title>
-                    <path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path>
-                </svg>
+    <section class="content-user">
+            <!-- Tarjeta de Testimonio 1 -->
+            <div class="testimony-box">
+                <div class="user">
+                    <img src="{{ asset('img/user1.jpg') }}" alt="Foto del usuario">
+                    <p class="name">Josser Cordoba</p>
+                </div>
+                <p>Mi experiencia con ChocóEncanto fue inolvidable...</p>
+                <a href="#">Visítalo</a>
             </div>
-            <span></span>
-            <p class='word-user'>Mi experiencia con ChocóEncanto fue inolvidable. Desde el momento de la reserva hasta cada actividad, todo fue perfecto. El equipo fue atento y se encargó de que disfrutara de la belleza natural del Chocó de una manera única y auténtica. Las playas, la selva y el contacto con las comunidades locales hicieron que cada día fuera una aventura increíble. Definitivamente recomiendo ChocóEncanto a cualquiera que busque una conexión profunda con la naturaleza y la cultura del Chocó.</p>
-            <a class='link' href="#">Visítalo</a>
-        </div>
 
-        <div class="testimony-box">
-            <div class="user">
-                <img src="{{ asset('img/user2.webp') }}" alt="Usuario" />
-                <p class='name'>Lebron James</p>
-                <svg aria-label="Verificado" class="verificed" color="rgb(0, 149, 246)" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12">
-                    <title>Verificado</title>
-                    <path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path>
-                </svg>
+            <!-- Tarjeta de Testimonio 2 -->
+            <div class="testimony-box">
+                <div class="user">
+                    <img src="{{ asset('img/user2.webp') }}" alt="Foto del usuario">
+                    <p class="name">Lebron James</p>
+                </div>
+                <p>Viajar con ChocóEncanto fue una experiencia espectacular...</p>
+                <a href="#">Visítalo</a>
             </div>
-            <span></span>
-            <p class='word-user'>Viajar con ChocóEncanto fue una experiencia espectacular. La belleza del Chocó es impresionante, y gracias al equipo, pude disfrutarla al máximo. La atención al detalle y la organización de todo el viaje fueron de primera clase. Si estás buscando una aventura en un paraíso natural, ChocóEncanto es la mejor opción. ¡No podría recomendarlo más!</p>
-            <a class='link' href="#">Visítalo</a>
-        </div>
 
-        <div class="testimony-box">
-            <div class="user">
-                <img src="{{ asset('img/technova.png') }}" alt="Usuario" />
-                <p class='name'>TechNova</p>
-                <svg aria-label="Verificado" class="verificed" color="rgb(0, 149, 246)" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12">
-                    <title>Verificado</title>
-                    <path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path>
-                </svg>
+            <!-- Tarjeta de Testimonio 3 -->
+            <div class="testimony-box">
+                <div class="user">
+                    <img src="{{ asset('img/technova.png') }}" alt="Foto del usuario">
+                    <p class="name">TechNova</p>
+                </div>
+                <p>Como empresa de tecnología, estamos acostumbrados...</p>
+                <a href="#">Visítalo</a>
             </div>
-            <span></span>
-            <p class='word-user'>Como empresa de tecnología, estamos acostumbrados a procesos eficientes y bien estructurados, y ChocóEncanto no nos decepcionó. Desde el proceso de reserva hasta cada excursión, la atención al cliente fue excepcional. La biodiversidad y la naturaleza del Chocó, combinadas con la excelente organización de ChocóEncanto, hicieron que nuestra experiencia fuera única. Recomendamos sus servicios para cualquier persona o empresa que quiera disfrutar de una experiencia inolvidable en el Chocó.</p>
-            <a class='link' href="#">Visítalo</a>
-        </div>
-    </div>
+        </section>
+
 
     <footer>
         <span>Síguenos</span>

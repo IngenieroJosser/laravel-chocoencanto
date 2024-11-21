@@ -10,8 +10,8 @@
 <body>
     @include('partials.header')
 
-    <!-- Mensajes de éxito y error -->
-    @if(session('success'))
+   <!-- Mensajes de éxito y error -->
+     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
@@ -39,6 +39,9 @@
                     <option value="bahia-solano">Bahía Solano</option>
                     <option value="nuqui">Nuquí</option>
                     <option value="selva-chocoana">Selva Chocoana</option>
+                    <option value="tutunendo">Tutúnendo</option>
+                    <option value="condoto">Condoto</option>
+                    <option value="istmina">Istmina</option>
                 </select>
             </div>
 
@@ -102,5 +105,16 @@
             <button type="submit" class="form-submit-btn">Únete a explorar</button>
         </form>
     </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <p id="modal-message" class="modal-text"></p>
+        </div>
+    </div>
+
+
+    <script src="{{ asset('js/AuthReserves.js') }}"></script>
 </body>
 </html>
