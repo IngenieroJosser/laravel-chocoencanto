@@ -94,7 +94,7 @@
         <section class="data-analytics">
 
             <h2>API Regiones de Colombia</h2>
-            <h6>Ruta de API: <a href="https://api-colombia.com/api/v1/Region">https://api-colombia.com/api/v1/Region</a></h6>
+            <h6>Ruta de API: <a target="_blank" rel="noopener noreferrer" href="https://api-colombia.com/api/v1/Region">https://api-colombia.com/api/v1/Region</a></h6>
 
             <!-- Mostrar las regiones en un grid -->
             <div class="regions-grid">
@@ -147,7 +147,7 @@
     <section class="container--admin">
     <section class="data-analytics">
         <h2>API Atracciones Turísticas</h2>
-        <h6>Ruta de API: <a href="https://api-colombia.com/api/v1/TouristicAttraction">https://api-colombia.com/api/v1/TouristicAttraction</a></h6>
+        <h6>Ruta de API: <a target="_blank" rel="noopener noreferrer" href="https://api-colombia.com/api/v1/TouristicAttraction">https://api-colombia.com/api/v1/TouristicAttraction</a></h6>
 
         <!-- Mostrar las atracciones en un grid -->
         <div class="attractions-grid">
