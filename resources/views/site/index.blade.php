@@ -69,7 +69,7 @@
                     <p class="name">Josser Cordoba</p>
                 </div>
                 <p>Mi experiencia con ChocóEncanto fue inolvidable...</p>
-                <a href="#">Visítalo</a>
+                <a href="https://www.instagram.com/itsjosser/">Visítalo</a>
             </div>
 
             <!-- Tarjeta de Testimonio 2 -->
@@ -79,7 +79,7 @@
                     <p class="name">Lebron James</p>
                 </div>
                 <p>Viajar con ChocóEncanto fue una experiencia espectacular...</p>
-                <a href="#">Visítalo</a>
+                <a href="https://www.instagram.com/lebron/">Visítalo</a>
             </div>
 
             <!-- Tarjeta de Testimonio 3 -->
@@ -89,7 +89,7 @@
                     <p class="name">TechNova</p>
                 </div>
                 <p>Como empresa de tecnología, estamos acostumbrados...</p>
-                <a href="#">Visítalo</a>
+                <a href="https://www.instagram.com/__technova/">Visítalo</a>
             </div>
         </section>
 
