@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url('../../../../css/components/admin/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url('../../../../css/components/admin/showApi.css') }}">
     <title>Admin - ChocóEncanto</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -89,7 +90,32 @@
         </div>
     </section>
 
-   
+    <section class="container--admin">
+        <section class="data-analytics">
+
+            <h2>API Regiones de Colombia</h2>
+            <h6>Ruta de API: <a href="https://api-colombia.com/api/v1/Region">https://api-colombia.com/api/v1/Region</a></h6>
+
+            <!-- Mostrar las regiones en un grid -->
+            <div class="regions-grid">
+                @foreach($regions as $region)
+                    <div class="region-card">
+                        <h3>{{ $region['name'] }}</h3>
+                        <p>{{ $region['description'] }}</p>
+                        <div class="description">
+                            <strong>Departamentos:</strong> 
+                            @if($region['departments'])
+                                {{ implode(', ', $region['departments']) }}
+                            @else
+                                No disponible
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ctx = document.getElementById('salesChart').getContext('2d');
@@ -115,7 +141,38 @@
                 }
             });
         });
-</script>
+    </script>
+
+    <!-- Mostrar las atracciones turísticas -->
+    <section class="container--admin">
+    <section class="data-analytics">
+        <h2>API Atracciones Turísticas</h2>
+        <h6>Ruta de API: <a href="https://api-colombia.com/api/v1/TouristicAttraction">https://api-colombia.com/api/v1/TouristicAttraction</a></h6>
+
+        <!-- Mostrar las atracciones en un grid -->
+        <div class="attractions-grid">
+            @foreach($attractions as $attraction)
+                <div class="attraction-card">
+                    <h3>{{ $attraction['name'] }}</h3>
+                    <p>{{ $attraction['description'] }}</p>
+                    <div class="details">
+                        <strong>Latitud: {{ $attraction['latitude'] }}</strong>
+                        <strong>Longitud: {{ $attraction['longitude'] }}</strong>
+                        @if(is_array($attraction['images']) && !empty($attraction['images']))
+                            <img src="{{ $attraction['images'][0] }}" alt="Imagen de atracción" />
+                        @else
+                            <p>No hay imágenes disponibles.</p>
+                        @endif
+                    </div>
+                    <div class="rating">
+                        <strong>Calificación:</strong> {{ $attraction['rating'] ?? 'No disponible' }}
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
+</section>
+
 
 </body>
 </html>

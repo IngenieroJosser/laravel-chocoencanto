@@ -73,6 +73,7 @@ Route::get('/reserves', [ReservaController::class, 'index'])->name('reserves.ind
 
 
 
+
 // controlador para la consulta de la lista de usuarios
 use App\Http\Controllers\AdminController;
 
@@ -81,3 +82,18 @@ Route::get('/dashboard', [AdminController::class, 'dashboardListUsers'])->name('
 
 // Ruta para listar reservas
 Route::get('/dashboard/reserves', [AdminController::class, 'dashboardListReserves'])->name('dashboardListReserves');
+
+// Ruta para mostrar las regiones
+Route::get('/dashboard', [AdminController::class, 'showRegions'])->name('dashboard');
+
+// Ruta del consumo de la API
+Route::get('/show-regions', [AdminController::class, 'showRegions'])->name('show.regions');
+
+// Mostra la API de las REGIONES
+Route::get('/dashboard', [AdminController::class, 'showRegions'])->name('admin.dashboard');
+
+// Muestra la API de Turismo
+// Route::get('/dashboard', [AdminController::class, 'showAttractions']);
+// Route::get('/admin/attractions', [AdminController::class, 'getAttractions'])->name('admin.attractions');
+
+Route::get('/dashboard', [AdminController::class, 'getAttractions'])->name('admin.dashboard');

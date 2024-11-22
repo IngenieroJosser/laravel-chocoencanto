@@ -1,0 +1,123 @@
+/* Estilo para el grid para la API de REGIONES*/
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.region-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.region-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'text';
+}
+
+.region-card p {
+    font-size: 1em;
+    color: #555;
+    font-family: 'text';
+}
+
+.region-card .description {
+    margin-top: 15px;
+    color: #777;
+    font-size: 0.9em;
+    font-family: 'text';
+}
+
+.data-analytics h2,
+.data-analytics h6 {
+    text-align: center;
+    font-family: 'titleForm';
+}
+
+/* Estilos generales para la grilla de atracciones */
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Crea columnas responsivas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    padding: 20px;
+}
+
+/* Estilos para cada tarjeta de atracción */
+.attraction-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px); /* Efecto hover para elevar la tarjeta */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos de las tarjetas */
+.attraction-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Descripción debajo del título */
+.attraction-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Detalles de la atracción */
+.details {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.attraction-card p,
+.attraction-card h3 {
+    font-family: 'text';
+}
+
+.attraction-card .details strong,
+.attraction-card .rating strong {
+    font-family: 'text';
+}
+
+/* Estilos para las imágenes */
+.attraction-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Calificación */
+.rating {
+    font-size: 1em;
+    color: #ffbb33;
+    font-weight: 500;
+}
+
+/* Fondo y bordes del contenedor */
+.container--admin {
+    padding: 40px 0;
+    background-color: #f4f7fa;
+}
+
+.data-analytics h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}

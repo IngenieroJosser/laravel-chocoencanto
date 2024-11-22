@@ -106,7 +106,7 @@
         
         <p>Descubre la belleza natural de Quibdó, Chocó, con nuestros tours ecológicos y gastronómicos. Sumérgete en la cultura local y vive experiencias inolvidables en este paraíso tropical. ¡Reserva ahora y comienza tu aventura con nosotros!</p>
         <p>Calle 29 # 4-50, Barrio El Poblado, 270007 Quibdó, Chocó, Colombia, COLOMBIA</p>
-        <a class='login-footer' >Registrarse</a>
+        <a href="{{ url('/register') }}" style="color: #000; text-decoration: none;" class='login-footer' >Registrarse</a>
         <span class='all-right'> &copy; 2024 Todos los derechos reservados</span>
         <span class='all'> &copy;Desarrollado por <span>Josser Cordoba Rivas</span></span>
     </footer>
