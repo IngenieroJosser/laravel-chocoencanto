@@ -118,7 +118,7 @@ function handleUserResponse(message) {
     var lowerCaseMessage = message.trim().toLowerCase();
     
     // Verificar si el usuario quiere salir
-    if (lowerCaseMessage === "no" || lowerCaseMessage === "cancelar" || lowerCaseMessage === "salir") {
+    if (lowerCaseMessage === "no" || lowerCaseMessage === "cancelar" || lowerCaseMessage === "salir" || lowerCaseMessage === "ninguno") {
         var botMessage = document.createElement('p');
         botMessage.textContent = "Parece que no deseas continuar. ¿Te gustaría visitar nuestra página de Instagram?";
         botMessage.style.backgroundColor = '#ffffff';
