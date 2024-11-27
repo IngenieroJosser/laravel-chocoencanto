@@ -51,5 +51,76 @@ class AdminController extends Controller
         return view('site.dashboard', compact('attractions', 'regions'));
     }
 
+    // CONTROLADORES PARA EL CRUD
+    
+    // Mostrar todos los usuarios
+    public function index()
+    {
+        $users = UserModel::all();
+        return view('admin.users.index', compact('users'));
+    }
 
+    // Mostrar el formulario para crear un usuario
+    public function create()
+    {
+        return view('admin.users.create');
+    }
+
+    // Guardar un nuevo usuario
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        // Crear un nuevo usuario
+        $user = UserModel::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        return redirect()->route('admin.users.index')->with('success', 'Usuario creado exitosamente.');
+    }
+
+    // Mostrar el formulario para editar un usuario
+    public function edit($id)
+    {
+        $user = UserModel::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    // Actualizar un usuario
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+        'password' => 'nullable|string|min:6',
+    ]);
+
+    $user = UserModel::findOrFail($id); // Cambia UserModel si usas otro modelo
+    $user->name = $request->name;
+    $user->email = $request->email;
+
+    if ($request->password) {
+        $user->password = bcrypt($request->password);
+    }
+
+    $user->save();
+
+    return redirect()->route('admin.users.index')->with('success', 'Usuario actualizado exitosamente.');
+}
+
+
+    // Eliminar un usuario
+    public function destroy($id)
+    {
+        $user = UserModel::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado exitosamente.');
+    }
 }

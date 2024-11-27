@@ -15,7 +15,7 @@
 
         <div class="log-sign" style="padding: 1em 0;  margin-left: -15em; display: flex; display: flex; gap: 1em;">
             @if (Auth::check())
-                <span style="font-family: 'text';">Bienvenido,<strong>  Admin {{ Auth::user()->user }}</strong>!</span>
+                <span style="font-family: 'text'; color: #000;">Bienvenido,<strong>  Admin {{ Auth::user()->user }}</strong>!</span>
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
                     <button style="background-color: var(--color-four); padding: .5em 1em; border-radius: 11px; color: var(--text-two); font-family: 'text';" type="submit" class="btn1">Cerrar sesión</button>
@@ -28,15 +28,15 @@
     </header>
 
     
-
     {{-- resources/views/admin/data_analytics.blade.php --}}
     <section class="container--admin">
         <section class="data-analytics">
+        <a style="background-color: var(--color-four); padding: .9em 1.3em; color: #FFF; text-decoration: none; border-radius: 7px;" href="{{ route('admin.users.index') }}" class="btn btn-primary">CRUD Usuarios</a>
             {{-- <img class="data" src="{{ asset('assets/img/analytics.png') }}" alt="" /> --}}
 
             <div class="banner--admin">
                 <div class="content--admin">
-                    <img src="{{ asset('assets/icons/cart.png') }}" alt="icono de compra">
+                    <img src="{{ asset('icons/cart.png') }}" alt="icono de compra">
                     <p>Venta de paquetes</p>
                     <div class="content">
                         <p class="count--content">235,867</p>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="content--admin">
-                    <img src="{{ asset('assets/icons/dollar.png') }}" alt="peso colombiano">
+                    <img src="{{ asset('icons/dollar.png') }}" alt="peso colombiano">
                     <p>Ingresos</p>
                     <div class="content">
                         <p class="count--content">$235,867,090</p>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="content--admin">
-                    <img src="{{ asset('assets/icons/group.png') }}" alt="usuario">
+                    <img src="{{ asset('icons/group.png') }}" alt="usuario">
                     <p>Viajeros turistas</p>
                     <div class="content">
                         <p class="count--content">16,703</p>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="banner-a-2">
-                    <img src="{{ asset('assets/icons/rating.png') }}" alt="conversion">
+                    <img src="{{ asset('icons/rating.png') }}" alt="conversion">
                     <p>Rating turisticos</p>
                     <div class="content">
                         <p class="count--content">12,8%</p>
@@ -72,13 +72,7 @@
                 </div>
             </div>
 
-            <div class="banner-content">
-                <p>Rendimiento de ventas</p>
-                
-                <!-- Aquí colocamos el canvas para el gráfico -->
-                <canvas id="salesChart" width="400" height="200"></canvas>
-            </div>
-
+            
         </section>
 
         <div class="data-analytics-grafic">
@@ -90,89 +84,7 @@
         </div>
     </section>
 
-    <section class="container--admin">
-        <section class="data-analytics">
-
-            <h2>API Regiones de Colombia</h2>
-            <h6>Ruta de API: <a target="_blank" rel="noopener noreferrer" href="https://api-colombia.com/api/v1/Region">https://api-colombia.com/api/v1/Region</a></h6>
-
-            <!-- Mostrar las regiones en un grid -->
-            <div class="regions-grid">
-                @foreach($regions as $region)
-                    <div class="region-card">
-                        <h3>{{ $region['name'] }}</h3>
-                        <p>{{ $region['description'] }}</p>
-                        <div class="description">
-                            <strong>Departamentos:</strong> 
-                            @if($region['departments'])
-                                {{ implode(', ', $region['departments']) }}
-                            @else
-                                No disponible
-                            @endif
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </section>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('salesChart').getContext('2d');
-            const salesChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Enero', 'Febrero', 'Marzo'],
-                    datasets: [{
-                        label: 'Reservas',
-                        data: [10, 15, 20],
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-
-    <!-- Mostrar las atracciones turísticas -->
-    <section class="container--admin">
-    <section class="data-analytics">
-        <h2>API Atracciones Turísticas</h2>
-        <h6>Ruta de API: <a target="_blank" rel="noopener noreferrer" href="https://api-colombia.com/api/v1/TouristicAttraction">https://api-colombia.com/api/v1/TouristicAttraction</a></h6>
-
-        <!-- Mostrar las atracciones en un grid -->
-        <div class="attractions-grid">
-            @foreach($attractions as $attraction)
-                <div class="attraction-card">
-                    <h3>{{ $attraction['name'] }}</h3>
-                    <p>{{ $attraction['description'] }}</p>
-                    <div class="details">
-                        <strong>Latitud: {{ $attraction['latitude'] }}</strong>
-                        <strong>Longitud: {{ $attraction['longitude'] }}</strong>
-                        @if(is_array($attraction['images']) && !empty($attraction['images']))
-                            <img src="{{ $attraction['images'][0] }}" alt="Imagen de atracción" />
-                        @else
-                            <p>No hay imágenes disponibles.</p>
-                        @endif
-                    </div>
-                    <div class="rating">
-                        <strong>Calificación:</strong> {{ $attraction['rating'] ?? 'No disponible' }}
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
-</section>
-
+    
 
 </body>
 </html>

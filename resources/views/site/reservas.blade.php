@@ -48,11 +48,11 @@
             <!-- Fechas -->
             <div class="form-group">
                 <label for="fecha-inicio">Fecha de inicio</label>
-                <input type="date" id="fecha-inicio" name="fecha_inicio" required>
+                <input type="datetime-local" id="fecha-inicio" name="fecha_inicio" required>
             </div>
             <div class="form-group">
                 <label for="fecha-fin">Fecha de fin</label>
-                <input type="date" id="fecha-fin" name="fecha_fin" required>
+                <input type="datetime-local" id="fecha-fin" name="fecha_fin" required>
             </div>
 
             <!-- Número de personas -->
@@ -115,6 +115,6 @@
     </div>
 
 
-    <script src="{{ asset('js/AuthReserves.js') }}"></script>
+    <!-- <script src="{{ asset('js/AuthReserves.js') }}"></script> -->
 </body>
 </html>

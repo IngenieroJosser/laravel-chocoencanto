@@ -61,16 +61,12 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 // controlador para las reserva
-use App\Http\Controllers\Reserves\ReservaController;
 
-// Rutas para las reservas
+// use App\Http\Controllers\Reserves\ReservaController;
+use App\Http\Controllers\ReservaController;
+
 Route::get('/reservas/create', [ReservaController::class, 'create'])->name('reservas_create');
 Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas_store');
-Route::get('/reserve-data', [ReservaController::class, 'getReserveData']);
-
-// Lista de SELECT * FROM 'reserves'
-Route::get('/reserves', [ReservaController::class, 'index'])->name('reserves.index');
-
 
 
 
@@ -97,3 +93,23 @@ Route::get('/dashboard', [AdminController::class, 'showRegions'])->name('admin.d
 // Route::get('/admin/attractions', [AdminController::class, 'getAttractions'])->name('admin.attractions');
 
 Route::get('/dashboard', [AdminController::class, 'getAttractions'])->name('admin.dashboard');
+
+
+// CRUD
+// Ruta para listar usuarios
+Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users.index');
+
+// Ruta para mostrar el formulario de creación de usuario
+Route::get('/admin/users/create', [AdminController::class, 'create'])->name('admin.users.create');
+
+// Ruta para almacenar un nuevo usuario
+Route::post('/admin/users', [AdminController::class, 'store'])->name('admin.users.store');
+
+// Ruta para mostrar el formulario de edición de usuario
+Route::get('/admin/users/{id}/edit', [AdminController::class, 'edit'])->name('admin.users.edit');
+
+// Ruta para actualizar un usuario
+Route::put('/admin/users/{id}', [AdminController::class, 'update'])->name('admin.users.update');
+
+// Ruta para eliminar un usuario
+Route::delete('/admin/users/{id}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
